@@ -16,7 +16,7 @@ public class CalcularPorcentaje {
         System.out.print("Cantidad de alumnos que reprobaron :  ");
         double repro=numero.nextDouble();
         
-        System.out.println((repro/alum)*100+"%");
+        System.out.println((repro/alum)*100+"% reprobo");
         
     }
 }
