@@ -56,9 +56,6 @@ public class Casting {
             j++;
         }
         
-        do{
-            
-        }while()
     }
     //se reuiere un programa que dao el dia de nacimiento y el mes de nacimiento determine cual es su horoscopo
     //realize un programa par adivinr un numero el usuario ingresara un numero y el progrm entre i e el numero 
