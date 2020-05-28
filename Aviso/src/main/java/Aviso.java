@@ -12,9 +12,11 @@ public class Aviso {
     String status;
     String tipoAviso;
     
-    public void cambiarStatus() {
-        System.out.println();
+    
+    public void mostrarStatus() {
+        System.out.println(status);
     }
+    
 
     @Override
     public String toString() {
