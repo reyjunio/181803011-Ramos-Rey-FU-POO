@@ -18,6 +18,7 @@ public class Ak {
     //constructor vacio
     public Ak() {
     }
+    
 
     public Ak(String tipo, int cargador, int precision, double velocidadCarga, double precio, int danio, double velocidadDisparo) {
         this.tipo = tipo;
@@ -30,9 +31,9 @@ public class Ak {
     }
 
     //metodos son las acciones
-    public void disparar() {
-        System.out.println("Te estoy disparando con un daño de " + danio);
-    }
+   // public void disparar() {
+    //    System.out.println("Te estoy disparando con un daño de " + danio);
+    //}
 
     public void apuntar() {
     }

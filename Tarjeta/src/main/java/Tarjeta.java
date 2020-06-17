@@ -1,6 +1,7 @@
 
 public class Tarjeta {
 
+    //atributos
     int noCuenta;
     int nip;
     String nombre;
@@ -11,9 +12,11 @@ public class Tarjeta {
     double monto;
     double apartado;
 
+    //constructor vacio
     public Tarjeta() {
     }
 
+    //constructor con todos los parametro
     public Tarjeta(int noCuenta, int nip, String nombre, int dia, int mes, int anio, int cv, double monto, double apartado) {
         this.noCuenta = noCuenta;
         this.nip = nip;
@@ -50,34 +53,47 @@ public class Tarjeta {
 
     public void deposito(double monto) {
         this.monto += monto;
-
+        System.out.println("Deposito correcto!! \n");
     }
 
     public void retirar(double monto) {
         if (monto <= this.monto) {
             this.monto -= monto;
+            System.out.println("Retiro Exitosamente!!!");
+        } else if (monto > this.monto) {
+            System.out.println("No cuenta con saldo SUFICIENTE!!!");
         }
     }
 
-    
-    //metodo eliminar apartado
-    public void eliminarApartado(){
-        
-        this.monto = this.monto+this.apartado;
-        this.apartado=this.apartado-this.apartado;
-        
+    public void eliminarApartado() {
+
+        this.monto = this.monto + this.apartado;
+        this.apartado = this.apartado - this.apartado;
     }
-    //Metodo crear apartado
+
     public void crearapartado(double apartado) {
-        if (apartado <= this.monto){
-        this.monto = this.monto - apartado;
-        this.apartado = this.apartado + apartado;
-        } 
+        if (apartado <= this.monto) {
+            this.monto = this.monto - apartado;
+            this.apartado = this.apartado + apartado;
+            System.out.println("Se creo correctamente el apartado");
+        } else if (apartado > this.monto) {
+
+            System.out.println("No Cuenta con el saldo Suficiente");
+        }
     }
+    public void tarjetaVirtual(){
+        /*No Tarjeta
+        cv
+        fecha Vencimiento
+        
+        */
+           
+    }
+    
 
     @Override
     public String toString() {
-        return " noCuenta=" + noCuenta + "\n nombre=" + nombre + "\n Fecha Vencimiento=" + dia + "/"
+        return "\n noCuenta=" + noCuenta + "\n nombre=" + nombre + "\n Fecha Vencimiento=" + dia + "/"
                 + mes + "/" + anio + "\n cv=" + cv + "\n monto=" + monto + "\n apartado=" + apartado + "\n Total " + this.Total();
     }
 

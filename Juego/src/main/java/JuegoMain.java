@@ -1,56 +1,32 @@
 
+import java.util.Scanner;
+
 public class JuegoMain {
 
     public static void main(String[] args) {
-        
-        
-        Ak bronce = new Ak("bronce",5,75,5,1000,10,10);
-        
-        System.out.println(bronce.toString());
 
-        Ak plata = new Ak();
-        plata.tipo = "Plata";
-        plata.cargador = 8;
-        plata.precision = 70;
-        plata.velocidadCarga = 4.5;
-        plata.precio = 2300;
-        plata.danio = 11;
-        plata.velocidadDisparo = 9.8;
-        
-        System.out.println(plata.toString());
+        personaje p1 = new personaje("samuel");
+        personaje p2 = new personaje("camilo");
+        Scanner leer = new Scanner(System.in);
+        int valor;
 
-        Ak oro = new Ak();
-        oro.tipo = "Oro";
-        oro.cargador = 10;
-        oro.precision = 85;
-        oro.velocidadCarga = 4.3;
-        oro.precio = 2500;
-        oro.danio = 13;
-        oro.velocidadDisparo = 9.7;
-        
-        System.out.println(oro.toString());
+        System.out.println("Jugador 1 y jugador 2 elijan un arma");
+        System.out.println("1.- bronce");
+        System.out.println("2.- plata");
+        System.out.println("3.- oro");
+        System.out.println("4.- diamante");
+        System.out.println("5.- adamantium");
+        valor = leer.nextInt();
+        p1.equiparArma(valor);
+        valor = 0;
+        valor = leer.nextInt();
+        p2.equiparArma(valor);
 
-        Ak diamante = new Ak();
-        diamante.tipo = "Diamante";
-        diamante.cargador = 20;
-        diamante.precision = 95;
-        diamante.velocidadCarga = 3;
-        diamante.precio = 4000;
-        diamante.danio = 20;
-        diamante.velocidadDisparo = 9.4;
-        
-        System.out.println(diamante.toString());
+        System.out.println(p1);
+        System.out.println("\n El daño de disparo del arma es de " + p1.disparar() + " pts \n");
 
-        Ak adamantium = new Ak();
-        adamantium.tipo = "Adamantium";
-        adamantium.cargador = 30;
-        adamantium.precision = 100;
-        adamantium.velocidadCarga = 1;
-        adamantium.precio = 10000;
-        adamantium.danio = 27;
-        adamantium.velocidadDisparo = 8;
-        
-        System.out.println(adamantium.toString());
+        System.out.println(p2);
+        System.out.println("\n El daño de disparo del arma es de " + p2.disparar() + " pts");
 
     }
 

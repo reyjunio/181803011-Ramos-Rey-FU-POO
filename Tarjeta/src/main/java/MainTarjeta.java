@@ -10,6 +10,7 @@ public class MainTarjeta {
         Scanner scan = new Scanner(System.in);
 
         int nCuenta, nip, opcion;
+        double monto;
         System.out.println("Numero de cuenta : ");
         nCuenta = scan.nextInt();
         System.out.println("Nip : ");
@@ -29,28 +30,29 @@ public class MainTarjeta {
             } 
             System.out.println("4-Imprimir datos de la Cuenta");
             System.out.println("5-Salir");
-            System.out.println("Elige la Opcion: ");
+            System.out.print("Elige la Opcion: ");
             opcion = scan.nextInt();
             switch (opcion) {
                 case 1:
                     System.out.println("Cantidad a Depositar: ");
-                    tarjeta.deposito(scan.nextDouble());
+                    
+                    monto = scan.nextDouble();
+                    tarjeta.deposito(monto);
                     break;
                 case 2:
                     System.out.println("Cantidad a Retirar: ");
-                    tarjeta.retirar(scan.nextDouble());
+                    monto = scan.nextDouble();
+                    tarjeta.retirar(monto);
                     break;
                 case 3:
                     if (tarjeta.apartado > 0) {
-
                         tarjeta.eliminarApartado();
-                        System.out.println("Apartado Eliminado");
+                        System.out.println("Apartado Eliminado \n");
                     } else if (tarjeta.apartado == 0) {
-                        System.out.println("Cuanto quiere apartar");
+                        System.out.println("Cuanto quiere apartar \n");
                         tarjeta.crearapartado(scan.nextDouble());
                     } 
                     break;
-
                 case 4:
                     System.out.println(tarjeta.toString() + "\n");
                     break;
